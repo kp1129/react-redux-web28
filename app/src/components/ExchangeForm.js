@@ -1,9 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {connect} from 'react-redux';
+import {exchangeRateLoading} from '../actions/exchangeActions';
 
-const ExchangeForm = () => {
+const ExchangeForm = (props) => {
+    const [option, setOption] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        props.exchangeRateLoading(option);
+    }
+
     return (
-        <form>
-            <select id="currencies" name="currencies">
+        <form onSubmit={handleSubmit}>
+            <select onChange={(e) => setOption(e.target.value)} id="currencies" name="currencies">
                 <option value="CAD">CAD</option>
                 <option value="HKD">HKD</option>
                 <option value="ISK">ISK</option>
@@ -43,4 +52,11 @@ const ExchangeForm = () => {
     )
 }
 
-export default ExchangeForm;
+const mapStateToProps = state => {
+   return { 
+       display: state.display,
+       currency: state.currency
+    }
+}
+
+export default connect(mapStateToProps, {exchangeRateLoading})(ExchangeForm);

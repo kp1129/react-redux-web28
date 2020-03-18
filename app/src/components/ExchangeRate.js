@@ -1,11 +1,19 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
-const ExchangeRate = () => {
+
+const ExchangeRate = (props) => {
     return (
         <div className="exchange-rate">
-            <p>exchange rate goes here</p>
+            <p>{props.display}</p>
         </div>
     )
 }
 
-export default ExchangeRate;
+const mapStateToProps = state => {
+    return {
+        display: state.display
+    }
+}
+
+export default connect(mapStateToProps, {})(ExchangeRate);
