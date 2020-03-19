@@ -1,14 +1,51 @@
 .App {
-  text-align: center;
-}
-
-
-.exchange-rate {
+  position: fixed;
+  top: 7rem;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  height: 3rem;
-  padding: 0;
-  line-height: 0;
-  margin: 2rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 70vw;
+  text-align: center;
+  border: 1px solid #f9e0e2;
+  padding: 0 5rem;
+  background-color: #f7e6e8;
+  box-shadow: 3px 3px 5px 6px #e6ccce;
+  font-family: 'Courier New', Courier, monospace;
 }
+
+
+
+
+select {
+  height: 2rem;
+  border-radius: 5px;
+  font-size: 1.05rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+button {
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0 0.2rem;
+  height: 2rem;
+  border-radius: 5px;
+  font-size: 1.05rem;
+  background-color: #ec8587;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+
+ .exchange-rate {
+  min-width: 20%;
+
+  font-size: 1.5rem;
+  color: #c9a7bf;
+  font-weight: bolder;
+  
+} 

@@ -8,8 +8,10 @@ function App() {
   return (
     <div className="App">
       <Title />
-      <ExchangeRate />
+      
+      
       <ExchangeForm />
+      <ExchangeRate />
     </div>
   );
 }

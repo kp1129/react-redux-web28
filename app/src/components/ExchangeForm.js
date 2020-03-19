@@ -13,6 +13,7 @@ const ExchangeForm = (props) => {
     return (
         <form onSubmit={handleSubmit}>
             <select onChange={(e) => setOption(e.target.value)} id="currencies" name="currencies">
+                <option value="Select currency" selected disabled>Select currency</option>
                 <option value="CAD">CAD</option>
                 <option value="HKD">HKD</option>
                 <option value="ISK">ISK</option>

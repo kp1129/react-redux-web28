@@ -5,7 +5,7 @@ import {
 } from "../actions/exchangeActions";
 // initial state
 export const initialState = {
-  display: "Hello! Please select foreign currency to compare to USD",
+  display: "",
   currency: null
 };
 
@@ -21,7 +21,7 @@ export const exchangeReducer = (state = initialState, action) => {
     case EXCHANGE_RATE_SUCCESS:
       return {
         ...state,
-        display: action.payload
+        display: `${action.payload.toFixed(2)} ${state.currency} to 1 USD`
       };
     case EXCHANGE_RATE_ERROR:
         return {
