@@ -15,6 +15,15 @@
   font-family: 'Courier New', Courier, monospace;
 }
 
+.wrapper {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+
+h1 {
+  margin-left: 2rem;
+  margin-top: 1.5rem;
+}
 
 select {
   height: 2rem;

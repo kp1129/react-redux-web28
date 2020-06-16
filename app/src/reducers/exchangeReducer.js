@@ -6,7 +6,8 @@ import {
 // initial state
 export const initialState = {
   display: "",
-  currency: null
+  currency: null,
+  currencyFrom: null
 };
 
 //reducer function
@@ -16,12 +17,14 @@ export const exchangeReducer = (state = initialState, action) => {
       return {
         ...state,
         display: "Loading...",
-        currency: action.payload
+        currencyFrom: action.payload.convertFrom,
+        currency: action.payload.convertTo
       };
     case EXCHANGE_RATE_SUCCESS:
+      console.log('from the reducer', action.payload)
       return {
         ...state,
-        display: `${action.payload.toFixed(2)} ${state.currency} to 1 USD`
+        display: `${action.payload.toFixed(2)} ${state.currency} to 1 ${state.currencyFrom}`
       };
     case EXCHANGE_RATE_ERROR:
         return {
